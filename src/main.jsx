@@ -6,6 +6,14 @@ import './index.css'
 const root = createRoot(document.getElementById('root'))
 
 root.render(
-  <App></App>
+  <section className='container'>
+    <App isFollowing>
+      Miguel Angel Duran
+    </App>
+    <App username='pheralb' isFollowing={false}>
+      Pablo Hernandez
+    </App>
+    <App name='NASA' username='nasa'></App>
+  </section>
 )
 
