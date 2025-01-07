@@ -28,22 +28,41 @@
 }
 
 .tw-card-button {
+    display: flex;
     cursor: pointer;
     margin-left: 16px;
     border: 0;
     border-radius: 999px;
     padding: 6px 16px;
     font-weight: bold;
-    border: 1px solid #000;
     transition: .3s ease background-color;
+    position: relative;
+    justify-content: center;
 }
-
-.tw-card-button .is-following {
-    border: 1px solid red;
+.is-following {
+    border: 1px solid #bbb;
+    background-color: transparent;
+    color: #bbb;
+    width: 140px;
 }
 .tw-card-button:hover {
     background-color: #09f;
 }
 .tw-card-button.is-following:hover {
-    background-color: red;
+    border: 1px solid red;
+    background-color: #ff00001b;
+    color: transparent;
+}
+.text-follow {
+    display: block;
+}
+.tw-card-button.is-following:hover > .text-follow {
+    display: none;
+}
+.stop-follow {
+    display: none;
+}
+.tw-card-button.is-following:hover > .stop-follow {
+    display: block;
+    color:red;
 }

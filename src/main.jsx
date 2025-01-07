@@ -7,10 +7,10 @@ const root = createRoot(document.getElementById('root'))
 
 root.render(
   <section className='container'>
-    <App isFollowing>
+    <App initialIsFollowing>
       Miguel Angel Duran
     </App>
-    <App username='pheralb' isFollowing={false}>
+    <App username='pheralb' initialIsFollowing={false}>
       Pablo Hernandez
     </App>
     <App name='NASA' username='nasa'></App>

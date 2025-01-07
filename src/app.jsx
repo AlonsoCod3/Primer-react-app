@@ -1,8 +1,8 @@
 import './app.css'
 import { useState } from 'react'
 
-export function App ({username='midudev', children})  {
-    const [isFollowing, setIsFollowing] = useState(false)
+export function App ({username='midudev', children, initialIsFollowing})  {
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClasssName = isFollowing ? 'tw-card-button is-following' : 'tw-card-button'
@@ -21,7 +21,12 @@ export function App ({username='midudev', children})  {
             </header>
             <aside>
                 <button className={buttonClasssName} onClick={handlerClick}>
+                    <span className='text-follow'>
                     {text}
+                    </span>
+                    <span className='stop-follow'>
+                        Dejar de seguir
+                    </span>
                 </button>
             </aside>
         </article>
