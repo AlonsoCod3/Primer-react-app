@@ -4,16 +4,43 @@ import { App } from "./app.jsx"
 import './index.css'
 
 const root = createRoot(document.getElementById('root'))
+const users = [
+  {
+    username: 'sparky',
+    name: 'Spark El Rayo',
+    isFollowing: false
+  },
+  {
+    username: 'midudev',
+    name: 'Miguel Angel',
+    isFollowing: true
+  },
+  {
+    username: 'pheralb',
+    name: 'Pablo Hernadez',
+    isFollowing: false
+  },
+]
 
 root.render(
   <section className='container'>
-    <App initialIsFollowing>
+    { 
+      users.map(user => {
+        const { username, name, isFollowing } = user
+        return (
+          <App
+            key={username}
+            username={username}
+            initialIsFollowing={isFollowing} >
+            {name}
+          </App>
+
+        )
+      })
+    }
+    {/* <App initialIsFollowing>
       Miguel Angel Duran
-    </App>
-    <App username='pheralb' initialIsFollowing={false}>
-      Pablo Hernandez
-    </App>
-    <App name='NASA' username='nasa'></App>
+    </App> */}
   </section>
 )
 
